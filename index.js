@@ -62,9 +62,9 @@ if(msg.key.remoteJid === config.idGroup){
           logger
         });
         
-        buffer = await writeExifImg(buffer, {packname:"ngaji ngoding", author:"ngaji ngoding"});
+        buffer = await writeExifImg(buffer, {packname:"Bot", author:"ngaji ngoding"});
         
-        if (caption === 'buatkan sticker') {
+        if (caption === '!sticker') {
           sock.sendMessage(msg.key.remoteJid, {sticker:{url: buffer}});
         }
 }
