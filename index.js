@@ -54,7 +54,7 @@ const {
         messages, type
       })=> {
         const msg = messages[0];
-        if (!msg.message || msg.key.remoteJid === "status@broadcast" || msg.key.fromMe||!msg.message.imageMessage)return;
+        if (!msg.message || msg.key.remoteJid === "status@broadcast" || !msg.key.fromMe||!msg.message.imageMessage)return;
 if(msg.key.remoteJid === config.idGroup){
         let caption = msg.message.imageMessage.caption;
 
@@ -64,7 +64,7 @@ if(msg.key.remoteJid === config.idGroup){
         
         buffer = await writeExifImg(buffer, {packname:"Bot", author:"ngaji ngoding"});
         
-        if (caption === '!sticker') {
+        if (caption === '#sticker') {
           sock.sendMessage(msg.key.remoteJid, {sticker:{url: buffer}});
         }
 }
